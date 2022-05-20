@@ -1,0 +1,80 @@
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>Leaflet Map</title>
+<!-- Link Leaflet css and javascript -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css">
+<script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"></script>
+</head>
+<body>
+<!-- divide map bounding box -->
+<center>
+<br>
+<FONT FACE="DB Manit X" size = "10">
+<strong><font color="#8B4513">5 ที่เที่ยวสุดชิค "เนเธอร์แลนด์" เหมาะกับสายถ่ายรูป</a></FONT></strong>
+</FONT><br>
+<div id = "map" style = "width: 1500px ; height: 600px" </div>
+<!-- set center and Link map-->
+<script>
+var map = L.map("map").setView([52.10927220314626, 5.061433099756088],16); mapLink = '<a href="http://openstreetmap.org">OpenStreetMap</a>'; L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/{z}/{y}/{x}', {
+attribution: 'Map data &copy; ' + mapLink,
+maxZoom: 19,
+}).addTo(map); var greenIcon = L.icon({
+iconUrl: "netherlands1.jpg",
+shadowUrl: "", iconSize: [40, 30], // size of the icon
+shadowSize: [50, 64], // size of the shadow
+iconAnchor: [22, 94], // point of the icon which will correspond to marker's location
+shadowAnchor: [4, 62], // the same for the shadow
+popupAnchor: [-3, -76] // point from which the popup should open relative to the iconAnchor
+
+}); var marker = L.marker([52.35848469925353, 4.8810541423285505],
+{
+icon: greenIcon,
+draggable: true,
+title: "Van Gogh Museum",
+opacity: 1.5
+}).addTo(map)
+.bindPopup("<b> พิพิธภัณฑ์แวนโก๊ะห์ (Van Gogh Museum) <br> Van Gogh Museum <br> เปิดทุกวัน 09.00 - 18.00 น. </b>")
+
+.openPopup(); var marker = L.marker([52.360203969835815, 4.885165154040037],
+{
+icon: greenIcon,
+draggable: true,
+title: "Rijksmuseum",
+opacity: 1.5
+}).addTo(map)
+.bindPopup("<b> พิพิธภัณฑ์แห่งชาติแห่งอัมสเตอร์ดัม (Rijksmuseum) <br> Rijksmuseum <br> เปิดทุกวัน 09.00 - 19.00 น.</b>")
+
+.openPopup(); var marker = L.marker([51.92032974716088, 4.4905746982005965],
+{
+icon: greenIcon,
+draggable: true,
+title: "Cube Houses",
+opacity: 1.5
+}).addTo(map)
+.bindPopup("<b> บ้านคิวบิกเฮ้าส์ (Cube Houses) <br> Cube Houses <br> เปิดทุกวัน 10.00 - 18.00 น.</b>")
+
+.openPopup(); var marker = L.marker([52.2752770691305, 4.543106364162274],
+{
+icon: greenIcon,
+draggable: true,
+title: "Keukenhof",
+opacity: 1.5
+}).addTo(map)
+.bindPopup("<b> สวนเคอเคนฮอฟ (Keukenhof) <br> Keukenhof <br> เปิดบางฤดู ไม่ได้เปิดให้เข้าชมทั้งปี ตั้งแต่ 08.00 - 19.30 น.</b>")
+
+.openPopup(); var marker = L.marker([52.502396620591355, 4.8358453339646745],
+{
+icon: greenIcon,
+draggable: true,
+title: "Zaanse Schans",
+opacity: 1.5
+}).addTo(map)
+.bindPopup("<b> หมู่บ้านกังหันลมซานส์ สคานส์ (Zaanse Schans) <br> Zaanse Schans </b>")
+.openPopup();
+</script>
+</center>
+</body>
+</html>
